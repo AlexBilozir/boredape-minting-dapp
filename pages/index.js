@@ -92,94 +92,76 @@ export default function Home() {
                 </div>
                 
               </div>
-              <Link href="/mintnma" passHref>
-                <a className="mt-6 Montserrat-Light-Alt1 uppercase inline-flex items-center px-16 oy-2 text-sm sm:text-2xl md:text-3xl  text-center rounded bg-brand-red text-brand-background transform hover:scale-105">
-                  Go to minting page
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 ml-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
-              </Link>
+              {/* mntlnk */}
             </div>
           </div>
         </div>
       </div>
 
       <div id="faq">
-      <section class="text-brand-red">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="text-center mb-20">
-            <h1 class="sm:text-3xl text-2xl text-center title-font Montserrat-Light-Alt1 text-brand-red mb-4">
+      <section className="text-brand-red">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="text-center mb-20">
+            <h1 className="sm:text-3xl text-2xl text-center title-font Montserrat-Light-Alt1 text-brand-red mb-4">
               Frequently Asked Questions
             </h1> 
           </div>
-          <div class="flex flex-row lg:w-4/5 sm:mx-auto justify-center Montserrat-Light-Alt1 sm:mb-2 ">
-            <div class="w-full max-w-7xl  py-2">
-            <details class="mb-4">
-                <summary class="font-semibold border-b  border-brand-red  py-2 px-4 mb-2">
+          <div className="flex flex-row lg:w-4/5 sm:mx-auto justify-center Montserrat-Light-Alt1 sm:mb-2 ">
+            <div className="w-full max-w-7xl  py-2">
+            <details className="mb-4">
+                <summary className="font-semibold border-b  border-brand-red  py-2 px-4 mb-2">
                   What is the mint price?
                 </summary>
 
-                <span class="px-4 py-4 text-brand-red">
+                <span className="px-4 py-4 text-brand-red">
                   WL - 0.01 ETH, Public - TBA
                 </span>
               </details>
-              <details class="mb-4">
-                <summary class="font-semibold  border-b  border-brand-red   py-2 px-4 mb-2">
+              <details className="mb-4">
+                <summary className="font-semibold  border-b  border-brand-red   py-2 px-4 mb-2">
                   When is the mint date?
                 </summary>
 
-                <span class="px-4 py-4 text-brand-red">
+                <span className="px-4 py-4 text-brand-red">
                   November, TBA
                 </span>
               </details>
-              <details class="mb-4">
-                <summary class="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
+              <details className="mb-4">
+                <summary className="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
                 How to get WL?
                 </summary>
 
-                <span class="px-4 py-4 text-brand-red">
+                <span className="px-4 py-4 text-brand-red">
                 Through raffles from collaboration or Twitter giveaways. 
                 </span>
               </details>
-              <details class="mb-4">
-                <summary class="font-semibold  border-b  border-brand-red  py-2 px-4 mb-2">
+              <details className="mb-4">
+                <summary className="font-semibold  border-b  border-brand-red  py-2 px-4 mb-2">
                   What was your main goal?
                 </summary>
 
-                <span class="px-4 py-4 text-brand-red block">
+                <span className="px-4 py-4 text-brand-red block">
                 Our goal was to create art of such quality that people want to hang it on their walls instead of moving it to the "hidden" folder.
                 </span>
               </details>
-              <details class="mb-4">
-                <summary class="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
+              <details className="mb-4">
+                <summary className="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
                 How are you different from other similar projects?
                 </summary>
 
-                <span class="px-4 py-2 text-brand-red block" >
+                <span className="px-4 py-2 text-brand-red block" >
                 1. The quality of our creations is much better. 8000x8000px 300DPI. No other NFT collection seems to have this.   </span>    
-                <span class="px-4 py-2 text-brand-red block" >
+                <span className="px-4 py-2 text-brand-red block" >
                 2. Our collection is diverse unlike other similar ones. This means that our supply consists of many "characters" and styles.
                 </span>
               </details>
               
-              <details class="mb-4">
-                <summary class="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
+              <details className="mb-4">
+                <summary className="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
                 When is the reveal?
                 </summary>
 
-                <span class="px-4 py-4 text-brand-red">
+                <span className="px-4 py-4 text-brand-red">
                 A few days after minting day.
                 </span>
               </details>
@@ -190,10 +172,10 @@ export default function Home() {
       </section>
     </div>
     <div id="faq">
-      <section class="text-brand-red">
-        <div class="container mx-auto">
-          <div class="text-center mb-10">
-            <h1 class="sm:text-xl  text-center title-font Montserrat-Light-Alt1 text-brand-red">
+      <section className="text-brand-red">
+        <div className="container mx-auto">
+          <div className="text-center mb-10">
+            <h1 className="sm:text-xl  text-center title-font Montserrat-Light-Alt1 text-brand-red">
             © 2022 NeuralMix Art
             </h1> 
           </div>
