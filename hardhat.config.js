@@ -1,5 +1,6 @@
 require('dotenv').config()
 require('@nomiclabs/hardhat-waffle')
+require("@nomiclabs/hardhat-etherscan");
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -17,10 +18,10 @@ module.exports = {
       }
     }
   },
-  defaultNetwork: 'rinkeby',
+  defaultNetwork: 'goerli',
   networks: {
     hardhat: {},
-    rinkeby: {
+    goerli: {
       url: `${process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL}`,
       accounts: [`0x${process.env.METAMASK_PRIVATE_KEY}`]
     }

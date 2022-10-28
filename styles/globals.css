@@ -1,23 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Open+Sans:wght@400;500;600&display=swap');
+  
+@font-face {
+  font-family: 'Montserrat-Light-Alt1';
+  src: url('../fonts/Montserrat-Light-Alt1.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  }
+@font-face {
+  font-family: 'Montserrat-UltraLight';
+  src: url('../fonts/Montserrat-UltraLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: regular;
+  font-display: swap;
+  }
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-family: 'Open Sans', sans-serif;
+  --font-family: 'normal', sans-serif;
   --clr-light: #f0e9e9;
   --clr-purple: #9b5de5;
-  --clr-pink: #f15bb5;
+  --clr-red: #b72925;
   --clr-yellow: #fee440;
   --clr-blue: #00bbf9;
   --clr-green: #00f5d4;
-  --clr-selection-bg: #cb3d92;
-  --clr-selection-text: #f4f0f0;
-  --clr-background: #06070a;
+  --clr-selection-bg: #b72925;
+  --clr-selection-text: #0d1114;
+  --clr-background: #0d1114;
 
   /* Customize Wallet Modal */
   /* CUSTOMIZE THE COLOR  PALLETTE */
+  
   --onboard-white: white;
   --onboard-black: black;
   --onboard-primary-1: #2f80ed;
@@ -67,4 +83,10 @@ html {
 ::selection {
   background: var(--clr-selection-bg);
   color: var(--clr-selection-text);
+}
+.Montserrat-Light-Alt1 {
+  font-family: Montserrat-Light-Alt1, sans-serif;
+}
+.Montserrat-UltraLight {
+  font-family: Montserrat-UltraLight, sans-serif;
 }

@@ -2,52 +2,40 @@ import { init } from '@web3-onboard/react'
 import injectedModule from '@web3-onboard/injected-wallets'
 import walletConnectModule from '@web3-onboard/walletconnect'
 import coinbaseModule from '@web3-onboard/coinbase'
-import fortmaticModule from '@web3-onboard/fortmatic'
+// import fortmaticModule from '@web3-onboard/fortmatic'
 
-import ApeIcon from '../Ape'
+import NMAicon from '../NMAicon'
 
 const RPC_URL = process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL
 
-const fortmatic = fortmaticModule({
-  apiKey: process.env.NEXT_PUBLIC_FORTMATIC_KEY
-})
+// const fortmatic = fortmaticModule({
+//   apiKey: process.env.NEXT_PUBLIC_FORTMATIC_KEY
+// })
 
 const injected = injectedModule()
 const walletConnect = walletConnectModule()
 const coinbaseWallet = coinbaseModule()
 
 const initOnboard = init({
-  wallets: [walletConnect, coinbaseWallet, injected, fortmatic],
+  wallets: [injected, walletConnect, coinbaseWallet],
   chains: [
-    // {
-    //   id: '0x1',
-    //   token: 'ETH',
-    //   label: 'Ethereum Mainnet',
-    //   rpcUrl: 'https://mainnet.infura.io/v3/ababf9851fd845d0a167825f97eeb12b'
-    // },
-    // {
-    //   id: '0x3',
-    //   token: 'tROP',
-    //   label: 'Ethereum Ropsten Testnet',
-    //   rpcUrl: 'https://ropsten.infura.io/v3/ababf9851fd845d0a167825f97eeb12b'
-    // },
     {
-      id: '0x4',
-      token: 'rETH',
-      label: 'Ethereum Rinkeby Testnet',
-      rpcUrl: RPC_URL
+      id: '0x1',
+      token: 'ETH',
+      label: 'Ethereum Mainnet',
+      rpcUrl: 'https://mainnet.infura.io/v3/3f278bfaf5874e62a7e772cc0082fa5c'
+    },
+    {
+      id: '0x5',
+      token: 'gETH',
+      label: 'Ethereum Goerli Testnet',
+      rpcUrl: 'https://Goerli.infura.io/v3/3f278bfaf5874e62a7e772cc0082fa5c'
     }
-    // {
-    //   id: '0x89',
-    //   token: 'MATIC',
-    //   label: 'Matic Mainnet',
-    //   rpcUrl: 'https://matic-mainnet.chainstacklabs.com'
-    // }
   ],
   appMetadata: {
-    name: 'BoredApes',
-    icon: ApeIcon,
-    description: 'We are some bored apes',
+    name: 'NΞuralMix Art',
+    icon: NMAicon,
+    description: 'AI artworks NFT collection',
     recommendedInjectedWallets: [
       { name: 'MetaMask', url: 'https://metamask.io' },
       { name: 'Coinbase', url: 'https://wallet.coinbase.com/' }
@@ -61,5 +49,6 @@ const initOnboard = init({
     explore: 'https://blocknative.com'
   }
 })
+
 
 export { initOnboard }
