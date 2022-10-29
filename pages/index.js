@@ -54,6 +54,7 @@ export default function Home() {
             <img
               src="/images/nma.gif"
               className="w-2/5 h-2/5  object-cover"
+              alt="sneak peek"
             />
 
             <div className="flex flex-col  items-center justify-center text-center Montserrat-UltraLight text-brand-red px-4 md:px-0 ">

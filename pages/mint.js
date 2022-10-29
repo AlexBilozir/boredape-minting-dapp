@@ -167,6 +167,7 @@ export default function Mint() {
                 <img
                   src="/images/nma.gif"
                   className="object-cover w-full sm:h-[280px] md:w-[250px] rounded-md"
+                  alt="sneak peek"
                 />
               </div>
 
