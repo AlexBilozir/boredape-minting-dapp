@@ -73,7 +73,7 @@ export default function Home() {
                 Sneak peeks on IPFS
               </h2>
               <h4 className="font-bold mt-2 Montserrat-Light-Alt1 ">
-              (wait until the image is fully downloaded then click to zoom in and check the detail)
+              (wait until the image is fully downloaded then click to zoom in and check the quality)
               </h4>
               <div className="flex flex-wrap mt-4 justify-center space-x-4 md:space-x-12">
                 <div>
