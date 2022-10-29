@@ -22,11 +22,11 @@ export default function Home() {
             <img src="images/logo33.png"/>
         </div>
         <div className="flex flex-wrap mt-4 justify-center space-x-4 md:space-x-12">
-            <div className="">
+            <div>
             <a href="#faq" className="m-6"><img src="images/faq.png" width="45" alt="FAQ" className="transform hover:scale-110" /></a>
 
             </div>
-            <div className="">
+            <div>
             <a href="https://twitter.com/neuralmixart " className="m-6" target="_blank"><img src="images/twitter3.png" width="45" alt="Official Twitter Page" className="transform hover:scale-110" /></a>
 
             </div>
@@ -75,19 +75,19 @@ export default function Home() {
               (wait until the image is fully downloaded then click to zoom in and check the detail)
               </h4>
               <div className="flex flex-wrap mt-4 justify-center space-x-4 md:space-x-12">
-                <div className="">
+                <div>
                  <a href="https://neuralmixart.mypinata.cloud/ipfs/QmUTsuDfWftTqyMwLC1YinFo1NaYLMhpfCkenbtQUc7H2W" target="_blank" className="font-bold text-2xl Montserrat-Light-Alt1 uppercase m-4">#1</a>
                 </div>
-                <div className="">
+                <div>
                  <a href="https://neuralmixart.mypinata.cloud/ipfs/QmNqcSdPjZRMewVPcykRb8xCLCzUk1wQu8bwL4w8dD9NNS" target="_blank" className="font-bold text-2xl Montserrat-Light-Alt1 uppercase m-4">#2</a>
                 </div>
-                <div className="">
+                <div>
                  <a href="https://neuralmixart.mypinata.cloud/ipfs/QmWUZcrotu3CRgqeFBHU4F3e8aZTzcHRt7Jo3pkFW9115a" target="_blank" className="font-bold text-2xl Montserrat-Light-Alt1 uppercase m-4">#3</a>
                 </div>
-                <div className="">
+                <div>
                  <a href="https://neuralmixart.mypinata.cloud/ipfs/QmdkAqSrcB7gT4zZj6cCFikiDPembK5oEuks8wCtEWNEwC" target="_blank" className="font-bold text-2xl Montserrat-Light-Alt1 uppercase m-4">#4</a>
                 </div>
-                <div className="">
+                <div>
                  <a href="https://neuralmixart.mypinata.cloud/ipfs/QmXgcNHN26aJFoAHgaFUqzKG6viRPiE7BtCoefnWDAuze8"  target="_blank"className="font-bold text-2xl Montserrat-Light-Alt1 uppercase m-4">#5</a>
                 </div>
                 
