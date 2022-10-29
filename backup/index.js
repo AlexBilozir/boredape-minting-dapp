@@ -29,7 +29,7 @@ export default function Home() {
           <nav aria-label="Contact Menu">
             <ul className="flex items-center space-x-4 md:space-x-6">
               <li className="cursor-pointer">
-                <a href="https://opensea.io" target="_blank" rel="noreferrer">
+                <a href="https://opensea.io" target="_blank" rel="noopener noreferrer">
                   <svg
                     className="w-6 h-6 md:w-8 md:h-8"
                     viewBox="0 0 90 90"
@@ -48,7 +48,7 @@ export default function Home() {
                 <a
                   href="https://twitter.com/DidemKkkaraasl1"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     className="w-6 h-6 md:w-8 md:h-8"
@@ -67,7 +67,7 @@ export default function Home() {
                 <a
                   href="https://discord.gg/rAFdkCwn"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     className="w-6 h-6 md:w-8 md:h-8"

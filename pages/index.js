@@ -27,19 +27,19 @@ export default function Home() {
 
             </div>
             <div>
-            <a href="https://twitter.com/neuralmixart " className="m-6" target="_blank" rel="noreferrer"><img src="images/twitter3.png" width="45" alt="Official Twitter Page" className="transform hover:scale-110" /></a>
+            <a href="https://twitter.com/neuralmixart " className="m-6" target="_blank" rel="noopener noreferrer"><img src="images/twitter3.png" width="45" alt="Official Twitter Page" className="transform hover:scale-110" /></a>
 
             </div>
             <div className="cursor-not-allowed">
-            <a href="" className="m-6 pointer-events-none " target="_blank" rel="noreferrer"><img src="images/discord2.png" width="45" alt="Official Discord Server"  /></a>
+            <a href="" className="m-6 pointer-events-none " target="_blank" rel="noopener noreferrer"><img src="images/discord2.png" width="45" alt="Official Discord Server"  /></a>
 
             </div>
             <div className="cursor-not-allowed">
-            <a href="#" className="m-6 pointer-events-none" target="_blank" rel="noreferrer"><img src="images/opensea.png" width="45" alt="Official Opensea Page"  /></a>
+            <a href="#" className="m-6 pointer-events-none" target="_blank" rel="noopener noreferrer"><img src="images/opensea.png" width="45" alt="Official Opensea Page"  /></a>
 
             </div>
             <div className="cursor-not-allowed">
-            <a href="#" className="m-6 pointer-events-none" target="_blank" rel="noreferrer"><img src="images/etherscan.png" width="45" alt="Official Contract Page" /></a>
+            <a href="#" className="m-6 pointer-events-none" target="_blank" rel="noopener noreferrer"><img src="images/etherscan.png" width="45" alt="Official Contract Page" /></a>
 
             </div>
           </div>

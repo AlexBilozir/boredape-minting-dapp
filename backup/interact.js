@@ -92,7 +92,7 @@ export const presaleMint = async (mintAmount) => {
     return {
       success: true,
       status: (
-        <a href={`https://Goerli.etherscan.io/tx/${txHash}`} target="_blank" rel="noreferrer">
+        <a href={`https://Goerli.etherscan.io/tx/${txHash}`} target="_blank" rel="noopener noreferrer">
           <p>✅ Check out your transaction on Etherscan:</p>
           <p>{`https://Goerli.etherscan.io/tx/${txHash}`}</p>
         </a>
@@ -139,7 +139,7 @@ export const publicMint = async (mintAmount) => {
     return {
       success: true,
       status: (
-        <a href={`https://Goerli.etherscan.io/tx/${txHash}`} target="_blank" rel="noreferrer">
+        <a href={`https://Goerli.etherscan.io/tx/${txHash}`} target="_blank" rel="noopener noreferrer">
           <p>✅ Check out your transaction on Etherscan:</p>
           <p>{`https://Goerli.etherscan.io/tx/${txHash}`}</p>
         </a>
