@@ -12,7 +12,7 @@ require('@nomiclabs/hardhat-etherscan')
  
  const BASE_URI = 'ipfs://Qmb5A1fFECM2iFHgUioii2khT814nCi6VU9aHXHHqNxHCK/'
  const proxyRegistryAddressGoerli = '0xf57b2c51ded3a29e6891aba85459d600256cf317'
- const proxyRegistryAddressGoerli = '0x8498c44ca0ac643073Bb548d1faEd511FE823098'
+ //const proxyRegistryAddressGoerli = '0x8498c44ca0ac643073Bb548d1faEd511FE823098'
 
  const proxyRegistryAddressMainnet = '0xa5409ec958c83c3f309868babaca7c86dcb077c1'
  
@@ -23,7 +23,7 @@ require('@nomiclabs/hardhat-etherscan')
    const root = merkleTree.getRoot()
  
    await hre.run('verify:verify', {
-     address: '0x1E34b2e70A1652EBc9f2284547596c234041e892', // Deployed contract address
+     address: '0xe0E4cD3881F172e872cC3EfA13EDaDC4415eC353', // Deployed contract address
      constructorArguments: [BASE_URI, root, proxyRegistryAddressGoerli]
    })
  }

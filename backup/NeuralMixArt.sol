@@ -39,8 +39,8 @@ contract NeuralMixArt is
     uint256 presaleAmountLimit = 1;
     mapping(address => uint256) public _presaleClaimed;
 
-    uint256 _price = 69000000000000000; // 0.069 ETH
-    uint256 _presalePrice = 42000000000000000; // 0.042 ETH
+    uint256 public _price = 69000000000000000; // 0.069 ETH
+    uint256 public _presalePrice = 42000000000000000; // 0.042 ETH
 
     Counters.Counter private _tokenIds;
 

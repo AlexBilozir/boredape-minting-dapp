@@ -13,7 +13,7 @@
  async function main() {
    const nftFactory = await hre.ethers.getContractFactory('NeuralMixArt')
    const nftContract = await nftFactory.attach(
-     '0x6BA6ce25AE180B584400170D1D6999ADA02b1a3c' // Deployed contract address
+     '0x3CE64d3aAd31dB14718689C1181Ee708e3ab0F4e' // Deployed contract address
    )
  
    // Re-calculate merkle root from the whitelist array.

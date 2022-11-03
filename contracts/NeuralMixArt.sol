@@ -20,7 +20,9 @@ contract NeuralMixArt is
     
     address proxyRegistryAddress;
 
-    uint256 public maxSupply = 5000;
+    uint256 public maxSupply = 10;
+
+    uint256 public maxPreSaleSupply = 5;
 
     string public baseURI; 
     string public notRevealedUri = "ipfs://QmPeSFskUiBSzTWjJLUcB4rEbms7PvtW5jJRZj8tvFDm8E/hidden.json";
@@ -34,8 +36,8 @@ contract NeuralMixArt is
     uint256 presaleAmountLimit = 1;
     mapping(address => uint256) public _presaleClaimed;
 
-    uint256 _price = 33000000000000000; // 0.033 ETH
-    uint256 _presalePrice = 10000000000000000; // 0.01 ETH
+    uint256 public _price = 10000000000000000; // 0.033 ETH
+    uint256 public _presalePrice = 0; // 0.01 ETH
 
     Counters.Counter private _tokenIds;
 
@@ -114,8 +116,8 @@ contract NeuralMixArt is
         uint current = _tokenIds.current();
 
         require(
-            current + _amount <= maxSupply,
-            "Max supply exceeded"
+            current + _amount <= maxPreSaleSupply,
+            "Max presale supply exceeded"
         );
         require(
             _presalePrice * _amount <= msg.value,
@@ -189,6 +191,14 @@ contract NeuralMixArt is
                     )
                 )
                 : "";
+    }
+    function setMintPrice(uint256 newPrice) public onlyOwner {
+        require(newPrice >= 0, "NMA price must be greater than zero");
+        _price = newPrice;
+    }
+    function setPreSaleMintPrice(uint256 newPresalePrice) public onlyOwner {
+        require(newPresalePrice >= 0, "NMA price must be greater than zero");
+        _presalePrice = newPresalePrice;
     }
 
     function setBaseExtension(string memory _newBaseExtension)
