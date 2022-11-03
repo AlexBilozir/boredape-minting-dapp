@@ -61,7 +61,7 @@ export const presaleMint = async (mintAmount) => {
   if (!isValid) {
     return {
       success: false,
-      status: 'Invalid Merkle Proof - You are not on the whitelist'
+      status: 'Invalid Merkle Proof - YOU ARE NOT ON THE WHITELIST'
     }
   }
 
