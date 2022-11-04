@@ -115,7 +115,7 @@ export default function Home() {
                 </summary>
 
                 <span className="px-4 py-4 text-brand-red">
-                  WL - 0.01 ETH, Public - TBA
+                  WL - Free, Public - TBA
                 </span>
               </details>
               <details className="mb-4">
@@ -157,7 +157,7 @@ export default function Home() {
                 </span>
               </details>
               
-              <details className="mb-4">
+              {/* <details className="mb-4">
                 <summary className="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
                 When is the reveal?
                 </summary>
@@ -165,7 +165,7 @@ export default function Home() {
                 <span className="px-4 py-4 text-brand-red">
                 A few days after minting day.
                 </span>
-              </details>
+              </details> */}
               </div>
 
           </div>
