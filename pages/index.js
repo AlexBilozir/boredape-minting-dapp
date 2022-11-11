@@ -115,7 +115,7 @@ export default function Home() {
                 </summary>
 
                 <span className="px-4 py-4 text-brand-red">
-                  WL - Free, Public - TBA
+                  First 1500 free FCFS, 2 per wallet. Then 0.02 ETH, 10 per tx
                 </span>
               </details>
               <details className="mb-4">
@@ -124,16 +124,7 @@ export default function Home() {
                 </summary>
 
                 <span className="px-4 py-4 text-brand-red">
-                  November, TBA
-                </span>
-              </details>
-              <details className="mb-4">
-                <summary className="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
-                How to get WL?
-                </summary>
-
-                <span className="px-4 py-4 text-brand-red">
-                Through raffles from collaboration or Twitter giveaways. 
+                  15th of November, 4 PM UTC
                 </span>
               </details>
               <details className="mb-4">
@@ -156,16 +147,6 @@ export default function Home() {
                 2. Our collection is diverse unlike other similar ones. This means that our supply consists of many "characters" and styles.
                 </span>
               </details>
-              
-              {/* <details className="mb-4">
-                <summary className="font-semibold  border-b  border-brand-red py-2 px-4 mb-2">
-                When is the reveal?
-                </summary>
-
-                <span className="px-4 py-4 text-brand-red">
-                A few days after minting day.
-                </span>
-              </details> */}
               </div>
 
           </div>

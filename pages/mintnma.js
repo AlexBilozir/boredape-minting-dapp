@@ -256,6 +256,8 @@ export default function Mint() {
                   >
                     {isMinting ? 'Minting...' : 'Mint'}
                   </button>
+                  
+                  
                 ) : (
                   <button
                     className=" Montserrat-Light-Alt1 mt-12 w-full transform hover:scale-105 bg-brand-red  px-6 py-3 rounded-md text-2xl text-brand-backgrown mx-4 tracking-wide uppercase"
