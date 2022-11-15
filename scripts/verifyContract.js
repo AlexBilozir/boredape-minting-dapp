@@ -23,7 +23,7 @@ require('@nomiclabs/hardhat-etherscan')
    const root = merkleTree.getRoot()
  
    await hre.run('verify:verify', {
-     address: '0x79e7BA29F7597ca06fCC5de7694a50A5de529Faf', // Deployed contract address
+     address: '0x4f2E29c029b5c2ab4c17Ee41793b116d72985CA7', // Deployed contract address
      constructorArguments: [BASE_URI, root, proxyRegistryAddressMainnet]
    })
  }
