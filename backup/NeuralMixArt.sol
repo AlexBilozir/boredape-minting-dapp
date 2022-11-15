@@ -1,22 +1,34 @@
 // SPDX-License-Identifier: MIT
+
+
+// ███╗   ██╗███████╗██╗   ██╗██████╗  █████╗ ██╗     ███╗   ███╗██╗██╗  ██╗     █████╗ ██████╗ ████████╗
+// ████╗  ██║██╔════╝██║   ██║██╔══██╗██╔══██╗██║     ████╗ ████║██║╚██╗██╔╝    ██╔══██╗██╔══██╗╚══██╔══╝
+// ██╔██╗ ██║█████╗  ██║   ██║██████╔╝███████║██║     ██╔████╔██║██║ ╚███╔╝     ███████║██████╔╝   ██║   
+// ██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██╔══██║██║     ██║╚██╔╝██║██║ ██╔██╗     ██╔══██║██╔══██╗   ██║   
+// ██║ ╚████║███████╗╚██████╔╝██║  ██║██║  ██║███████╗██║ ╚═╝ ██║██║██╔╝ ██╗    ██║  ██║██║  ██║   ██║   
+// ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+                                                                                                      
+// Project Website: https://neuralmix.art
+// Project Twitter: https://twitter.com/NeuralMixArt
+// Minting date: Nov 15th 4PM UTC
+// Minting info: no WL, first 1500 free FCFS 2 per wallet, then 0.02 ETH 10 per tx
+
+// by @bilozir_eth
+
+
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import '@openzeppelin/contracts/finance/PaymentSplitter.sol';
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-// @author codingwithdidem
-// @contact codingwithdidem@gmail.com
-
 contract NeuralMixArt is 
     ERC721, 
     Ownable, 
-    ReentrancyGuard, 
-    PaymentSplitter 
+    ReentrancyGuard 
 {
     using Strings for uint256;
     using Counters for Counters.Counter;
@@ -27,8 +39,10 @@ contract NeuralMixArt is
 
     uint256 public maxSupply = 5000;
 
+    uint256 public maxPreSaleSupply = 1500;
+
     string public baseURI; 
-    string public notRevealedUri = "ipfs://QmYUuwLoiRb8woXwJCCsr1gvbr8E21KuxRtmVBmnH1tZz7/hidden.json";
+    string public notRevealedUri = "ipfs://QmPeSFskUiBSzTWjJLUcB4rEbms7PvtW5jJRZj8tvFDm8E/hidden.json";
     string public baseExtension = ".json";
 
     bool public paused = true;
@@ -36,24 +50,18 @@ contract NeuralMixArt is
     bool public presaleM = false;
     bool public publicM = false;
 
-    uint256 presaleAmountLimit = 1;
+    uint256 presaleAmountLimit = 2;
+    uint256 public maxMintAmount = 10;
     mapping(address => uint256) public _presaleClaimed;
 
-    uint256 public _price = 69000000000000000; // 0.069 ETH
-    uint256 public _presalePrice = 42000000000000000; // 0.042 ETH
+    uint256 public _price = 20000000000000000; // 0.02 ETH
+    uint256 public _presalePrice = 0; // 0 ETH
 
     Counters.Counter private _tokenIds;
 
-    uint256[] private _teamShares = [25, 35, 40]; // 3 PEOPLE IN THE TEAM
-    address[] private _team = [
-        0x8498c44ca0ac643073Bb548d1faEd511FE823098, 
-        0x9cEC3E680302eb2f6784d6a3A9dfd2FA25486752, 
-        0x67Ac2A27a7444a53A4db1317c0631822Da02b4f8 
-    ];
 
     constructor(string memory uri, bytes32 merkleroot, address _proxyRegistryAddress)
         ERC721("NeuralMixArt", "NMA")
-        PaymentSplitter(_team, _teamShares) // Split the payment based on the teamshares percentages
         ReentrancyGuard() // A modifier that can prevent reentrancy during certain functions
     {
         root = merkleroot;
@@ -108,30 +116,28 @@ contract NeuralMixArt is
     }
 
 
-    function presaleMint(address account, uint256 _amount, bytes32[] calldata _proof)
+    function presaleMint(uint256 _amount)
     external
     payable
-    isValidMerkleProof(_proof)
     onlyAccounts
     {
-        require(msg.sender == account,          "NeuralMixArt: Not allowed");
-        require(presaleM,                       "NeuralMixArt: Presale is OFF");
-        require(!paused,                        "NeuralMixArt: Contract is paused");
+        require(presaleM,                       "Presale is OFF");
+        require(!paused,                        "Contract is paused");
         require(
-            _amount <= presaleAmountLimit,      "NeuralMixArt: You can't mint so much tokens");
+            _amount <= presaleAmountLimit,      "You can't mint so much tokens");
         require(
-            _presaleClaimed[msg.sender] + _amount <= presaleAmountLimit,  "NeuralMixArt: You can't mint so much tokens");
+            _presaleClaimed[msg.sender] + _amount <= presaleAmountLimit,  "You can't mint so much tokens");
 
 
         uint current = _tokenIds.current();
 
         require(
-            current + _amount <= maxSupply,
-            "NeuralMixArt: max supply exceeded"
+            current + _amount <= maxPreSaleSupply,
+            "Max presale supply exceeded"
         );
         require(
             _presalePrice * _amount <= msg.value,
-            "NeuralMixArt: Not enough ethers sent"
+            "Not enough ethers sent"
         );
              
         _presaleClaimed[msg.sender] += _amount;
@@ -146,19 +152,20 @@ contract NeuralMixArt is
     payable
     onlyAccounts
     {
-        require(publicM, "NeuralMixArt: PublicSale is OFF");
-        require(!paused, "NeuralMixArt: Contract is paused");
-        require(_amount > 0, "NeuralMixArt: zero amount");
-
+        require(publicM, "PublicSale is OFF");
+        require(!paused, "Contract is paused");
+        require(_amount > 0, "Zero amount");
+        require(
+            _amount <= maxMintAmount,      "You can't mint more then 10 per tx");
         uint current = _tokenIds.current();
 
         require(
             current + _amount <= maxSupply,
-            "NeuralMixArt: Max supply exceeded"
+            "Max supply exceeded"
         );
         require(
             _price * _amount <= msg.value,
-            "NeuralMixArt: Not enough ethers sent"
+            "Not enough ethers sent"
         );
         
         
@@ -202,6 +209,14 @@ contract NeuralMixArt is
                 )
                 : "";
     }
+    function setMintPrice(uint256 newPrice) public onlyOwner {
+        require(newPrice >= 0, "NMA price must be greater than zero");
+        _price = newPrice;
+    }
+    function setPreSaleMintPrice(uint256 newPresalePrice) public onlyOwner {
+        require(newPresalePrice >= 0, "NMA price must be greater than zero");
+        _presalePrice = newPresalePrice;
+    }
 
     function setBaseExtension(string memory _newBaseExtension)
         public
@@ -216,6 +231,13 @@ contract NeuralMixArt is
 
     function totalSupply() public view returns (uint) {
         return _tokenIds.current();
+    }
+    address private constant treasuryAddress =
+        0x67Ac2A27a7444a53A4db1317c0631822Da02b4f8;
+
+    function withdraw() external onlyOwner {
+        uint256 balance = address(this).balance;
+        Address.sendValue(payable(treasuryAddress), balance);
     }
 
     /**

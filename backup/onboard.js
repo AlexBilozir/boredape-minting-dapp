@@ -31,12 +31,12 @@ const initOnboard = init({
     //   label: 'Ethereum Goerli Testnet',
     //   rpcUrl: 'https://Goerli.infura.io/v3/3f278bfaf5874e62a7e772cc0082fa5c'
     // }
-    {
-      id: '0x5',
-      token: 'gETH',
-      label: 'Ethereum Goerli Mainnet',
-      rpcUrl: 'https://goerli.infura.io/v3/3f278bfaf5874e62a7e772cc0082fa5c'
-    },
+    // {
+    //   id: '0x5',
+    //   token: 'gETH',
+    //   label: 'Ethereum Goerli Mainnet',
+    //   rpcUrl: 'https://goerli.infura.io/v3/3f278bfaf5874e62a7e772cc0082fa5c'
+    // },
   ],
   appMetadata: {
     name: 'NeuralMix Art',
