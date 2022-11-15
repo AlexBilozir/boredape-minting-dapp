@@ -135,7 +135,7 @@ export default function Home() {
                 </summary>
 
                 <span className="px-4 py-4 text-brand-red">
-                  First 1500 free FCFS, 2 per wallet. Then 0.02 ETH, 10 per tx
+                  First 500 free FCFS, 2 per wallet. Then 0.0069 ETH, 10 per tx
                 </span>
               </details>
               <details className="mb-4">
