@@ -18,10 +18,10 @@ module.exports = {
       }
     }
   },
-  defaultNetwork: 'goerli',
+  defaultNetwork: 'mainnet',
   networks: {
     hardhat: {},
-    goerli: {
+    mainnet: {
       url: `${process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL}`,
       accounts: [`0x${process.env.METAMASK_PRIVATE_KEY}`]
     }

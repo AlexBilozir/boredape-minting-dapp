@@ -8,7 +8,7 @@ import {
   isPausedState,
   isPublicSaleState,
   isPreSaleState,
-  presaleMint,
+  freeMint,
   publicMint
 } from '../utils/interact'
 
@@ -100,10 +100,10 @@ export default function Mint() {
     }
   }
 
-  const presaleMintHandler = async () => {
+  const freeMintHandler = async () => {
     setIsMinting(true)
 
-    const { success, status } = await presaleMint(mintAmount)
+    const { success, status } = await freeMint(mintAmount)
 
     setStatus({
       success,
@@ -145,7 +145,7 @@ export default function Mint() {
               </button>
             )}
             <h1 className="Montserrat-Light-Alt1 uppercase font-bold text-3xl md:text-4xl text-brand-red mt-3">
-              {paused ? 'Paused' : isPreSale ? 'Pre-Sale' : 'Public Sale'}
+              {paused ? 'Paused' : isPreSale ? 'Phase 1: Free Mint' : 'Phase 2: Public Mint'}
             </h1>
             <h3 className="Montserrat-UltraLight text-sm text-brand-red tracking-widest">
               {wallet?.accounts[0]?.address
@@ -234,7 +234,7 @@ export default function Mint() {
                     <div className="flex items-center space-x-3">
                       <p>
                         {Number.parseFloat(Price * mintAmount).toFixed(
-                          3
+                          2
                         )}{' '}
                         ETH
                       </p>{' '}
@@ -252,7 +252,7 @@ export default function Mint() {
                         : 'bg-brand-red'
                     }  Montserrat-Light-Alt1 mt-12 w-full px-6 py-3 rounded-md text-2xl transform hover:scale-105 text-brand-backgrown  mx-4 tracking-wide uppercase`}
                     disabled={paused || isMinting}
-                    onClick={isPreSale ? presaleMintHandler : publicMintHandler}
+                    onClick={isPreSale ? freeMintHandler : publicMintHandler}
                   >
                     {isMinting ? 'Minting...' : 'Mint'}
                   </button>
@@ -288,7 +288,7 @@ export default function Mint() {
                 Contract Address
               </h3>
               <a
-                href={`https://Goerli.etherscan.io/address/${config.contractAddress}#readContract`}
+                href={`https://etherscan.io/address/${config.contractAddress}#readContract`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand-red  mt-4"

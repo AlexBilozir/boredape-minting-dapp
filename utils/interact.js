@@ -44,7 +44,7 @@ export const getPrice = async () => {
   return price
 }
 
-export const presaleMint = async (mintAmount) => {
+export const freeMint = async (mintAmount) => {
   if (!window.ethereum.selectedAddress) {
     return {
       success: false,
@@ -52,18 +52,18 @@ export const presaleMint = async (mintAmount) => {
     }
   }
 
-  const leaf = keccak256(window.ethereum.selectedAddress)
-  const proof = merkleTree.getHexProof(leaf)
+  // const leaf = keccak256(window.ethereum.selectedAddress)
+  // const proof = merkleTree.getHexProof(leaf)
 
   // Verify Merkle Proof
-  const isValid = merkleTree.verify(proof, leaf, root)
+  // const isValid = merkleTree.verify(proof, leaf, root)
 
-  if (!isValid) {
-    return {
-      success: false,
-      status: 'Invalid Merkle Proof - YOU ARE NOT ON THE WHITELIST'
-    }
-  }
+  // if (!isValid) {
+  //   return {
+  //     success: true,
+  //     status: 'Invalid Merkle Proof - YOU ARE NOT ON THE WHITELIST'
+  //   }
+  // }
 
   const nonce = await web3.eth.getTransactionCount(
     window.ethereum.selectedAddress,
@@ -78,7 +78,7 @@ export const presaleMint = async (mintAmount) => {
       web3.utils.toWei(String(config.presalePrice * mintAmount), 'ether')
     ).toString(16), // hex
     data: nftContract.methods
-      .presaleMint(window.ethereum.selectedAddress, mintAmount, proof)
+      .freeMint(mintAmount)
       .encodeABI(),
     nonce: nonce.toString(16)
   }
@@ -92,9 +92,9 @@ export const presaleMint = async (mintAmount) => {
     return {
       success: true,
       status: (
-        <a href={`https://Goerli.etherscan.io/tx/${txHash}`} target="_blank" rel="noopener noreferrer">
+        <a href={`https://etherscan.io/tx/${txHash}`} target="_blank" rel="noopener noreferrer">
           <p>✅ Check out your transaction on Etherscan:</p>
-          <p>{`https://Goerli.etherscan.io/tx/${txHash}`}</p>
+          <p>{`https://etherscan.io/tx/${txHash}`}</p>
         </a>
       )
     }

@@ -10,7 +10,7 @@ require('@nomiclabs/hardhat-etherscan')
  const keccak256 = require('keccak256')
  const whitelist = require('./whitelist.js')
  
- const BASE_URI = 'ipfs://Qmb5A1fFECM2iFHgUioii2khT814nCi6VU9aHXHHqNxHCK/'
+ const BASE_URI = ''
  const proxyRegistryAddressGoerli = '0xf57b2c51ded3a29e6891aba85459d600256cf317'
  //const proxyRegistryAddressGoerli = '0x8498c44ca0ac643073Bb548d1faEd511FE823098'
 
@@ -23,8 +23,8 @@ require('@nomiclabs/hardhat-etherscan')
    const root = merkleTree.getRoot()
  
    await hre.run('verify:verify', {
-     address: '0xe0E4cD3881F172e872cC3EfA13EDaDC4415eC353', // Deployed contract address
-     constructorArguments: [BASE_URI, root, proxyRegistryAddressGoerli]
+     address: '0x79e7BA29F7597ca06fCC5de7694a50A5de529Faf', // Deployed contract address
+     constructorArguments: [BASE_URI, root, proxyRegistryAddressMainnet]
    })
  }
  
