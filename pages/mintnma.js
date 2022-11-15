@@ -127,8 +127,17 @@ export default function Mint() {
   
 
   return (
+    
     <div className="min-h-screen h-full w-full overflow-hidden flex flex-col items-center justify-center bg-brand-background ">
       
+        <title>{config.title}</title>
+        <meta name="description" content={config.description} />
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
+        
+      
+
 
         <div className="flex flex-col items-center justify-center h-full w-full px-2 md:px-10">
           <div className="relative z-1 md:max-w-3xl w-full border border-brand-red bg-brand-background filter py-4 rounded-md px-2 md:px-10 flex flex-col items-center">
